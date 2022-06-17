@@ -102,6 +102,7 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 	if ((*stack)->next == NULL)
 	{
 		set_last_opt_err(pint_error(line_number));
+		return;
 	}
 	printf("%d\n", (*stack)->next->n);
 }
