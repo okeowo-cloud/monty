@@ -11,7 +11,7 @@ void monty_swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 
-	if ((*stack)->next->next == NULL || (*stack)->next == NULL)
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		set_last_opt_err(swap_error(line_number));
 		return;
