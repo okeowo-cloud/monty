@@ -42,3 +42,28 @@ void monty_mod(stack_t **stack, unsigned int line_number)
 	(*stack)->next->next->n %= (*stack)->next->n;
 	monty_pop(stack, line_number);
 }
+
+
+/**
+ * monty_pchar - function prints the char at the top
+ * of the stack, followed by a new line.
+ *
+ * @stack: A pointer to the top mode of mode element of a stack_t list
+ * @line_number: The current working line of a monty byte file.
+ *
+ * Return: Always void
+ */
+void monty_pchar(stack_t **stack, unsigned int line_number)
+{
+	if ((*stack)->next == NULL)
+	{
+		set_last_opt_err(pchar_error(line_number, "stack empty"));
+		return;
+	}
+	if ((*stack)->next->n < 0 || (*stack)->next->n > 127)
+	{
+		set_last_opt_err(pchar_error(line_number, "value out of range"));
+		return;
+	}
+	printf("%c\n", (*stack)->next->n);
+}

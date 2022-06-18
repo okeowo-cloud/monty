@@ -55,6 +55,7 @@ int pint_error(unsigned int line_number);
 int pop_error(unsigned int line_number);
 int short_stack_error(unsigned int line_number, char *op);
 int zero_div_error(unsigned int line_number);
+int pchar_error(unsigned int line_number, char *err);
 
 /* Custom functions from library */
 char **strtow(char *str, char *delims);
@@ -78,5 +79,6 @@ void monty_sub(stack_t **stack, unsigned int line_number);
 void monty_div(stack_t **stack, unsigned int line_number);
 void monty_mul(stack_t **stack, unsigned int line_number);
 void monty_mod(stack_t **stack, unsigned int line_number);
+void monty_pchar(stack_t **stack, unsigned int line_number);
 
 #endif /* __MONTY_H__ */
