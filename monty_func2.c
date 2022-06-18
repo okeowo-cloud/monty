@@ -76,3 +76,27 @@ void monty_sub(stack_t **stack, unsigned int line_number)
 	(*stack)->next->next->n -= (*stack)->next->n;
 	monty_pop(stack, line_number);
 }
+
+/**
+ * monty_div - function divides the second top element of
+ * the stack by the top element of the stack.
+ * @stack: A pointer to the top mode element of the stack.
+ * @line_number: The current working line of a monty byte file.
+ *
+ * Return: Always void.
+ */
+void monty_div(stack_t **stack, unsigned int line_number)
+{
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
+	{
+		set_last_opt_err(short_stack_error(line_number, "div"));
+		return;
+	}
+	if ((*stack)->next->n == 0)
+	{
+		set_last_opt_err(zero_div_error(line_number));
+		return;
+	}
+	(*stack)->next->next->n /= (*stack)->next->n;
+	monty_pop(stack, line_number);
+}

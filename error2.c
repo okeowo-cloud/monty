@@ -36,3 +36,15 @@ int short_stack_error(unsigned int line_number, char *op)
 	fprintf(stderr, "L%u: can't %s, stack too short\n", line_number, op);
 	return (EXIT_FAILURE);
 }
+
+/**
+ * zero_div_error - print error message when stack element is divided by zero
+ * @line_number: line in monty byte file where error occured.
+ *
+ * Return: EXIT_FAILURE
+ */
+int zero_div_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%u: division by zero\n", line_number);
+	return (EXIT_FAILURE);
+}
