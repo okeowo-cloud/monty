@@ -85,6 +85,7 @@ void (*get_op_func(char *op_code))(stack_t**, unsigned int)
 		{"mul", monty_mul},
 		{"mod", monty_mod},
 		{"pchar", monty_pchar},
+		{"pstr", monty_pstr},
 		{NULL, NULL}
 	};
 

@@ -67,3 +67,29 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", (*stack)->next->n);
 }
+
+
+/**
+ * monty_pstr - function prints the string starting at the
+ * top of the stack, followed by a new line.
+ * @stack: A pointer to the top mode of element of a stack_t list
+ * @line_number: The current working line of a monty byte file.
+ *
+ * Return: Always void
+ */
+void monty_pstr(stack_t **stack, unsigned int line_number)
+{
+	int n;
+	stack_t *next;
+
+	next = (*stack)->next;
+	n = (*stack)->next->n;
+	while (n != 0 && next != NULL && (n > 0 && n <= 127))
+	{
+		printf("%c", n);
+		next = next->next;
+		n = next->n;
+	}
+	(void)line_number;
+	printf("\n");
+}
