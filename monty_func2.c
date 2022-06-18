@@ -9,7 +9,7 @@
  */
 void monty_swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = NULL;
+	stack_t *tmp;
 
 	if ((*stack)->next->next == NULL || (*stack)->next == NULL)
 	{
