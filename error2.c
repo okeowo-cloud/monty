@@ -23,3 +23,15 @@ int pop_error(unsigned int line_number)
 	fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 	return (EXIT_FAILURE);
 }
+
+/**
+ * swap_error - print error message when stack cannot be swapped
+ * @line_number: line in monty byte fle where error occured.
+ *
+ * Return: EXIT_FAILURE
+ */
+int swap_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+	return (EXIT_FAILURE);
+}
