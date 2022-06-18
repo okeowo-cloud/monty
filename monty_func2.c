@@ -48,7 +48,7 @@ void monty_add(stack_t **stack, unsigned int line_number)
 /**
  * monty_nop - function does nothing
  * @stack: A pointer to the topmode element of a stack_t linked list
- * @line_number: The current workong line of a monty byte file
+ * @line_number: The current working line of a monty byte file
  *
  * Return: Always void
  */
@@ -56,4 +56,23 @@ void monty_nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
+}
+
+/**
+ * monty_sub - function subtracts the top element
+ * of the stack from the second top element of the stack.
+ * @stack: A pointer to the top mode element of a stack_t list
+ * @line_number: The current working line of a monty byte file
+ *
+ * Return: Always void
+ */
+void monty_sub(stack_t **stack, unsigned int line_number)
+{
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
+	{
+		set_last_opt_err(short_stack_error(line_number, "sub"));
+		return;
+	}
+	(*stack)->next->next->n -= (*stack)->next->n;
+	monty_pop(stack, line_number);
 }
