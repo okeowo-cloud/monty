@@ -53,7 +53,7 @@ int unknown_op_error(char *op_code, unsigned int line_number);
 int no_int_error(unsigned int line_number);
 int pint_error(unsigned int line_number);
 int pop_error(unsigned int line_number);
-int swap_error(unsigned int line_number);
+int short_stack_error(unsigned int line_number, char *op);
 
 /* Custom functions from library */
 char **strtow(char *str, char *delims);
@@ -71,5 +71,6 @@ void monty_pall(stack_t **stack, unsigned int line_number);
 void monty_pint(stack_t **stack, unsigned int line_number);
 void monty_pop(stack_t **stack, unsigned int line_number);
 void monty_swap(stack_t **stack, unsigned int line_number);
+void monty_add(stack_t **stack, unsigned int line_number);
 
 #endif /* __MONTY_H__ */

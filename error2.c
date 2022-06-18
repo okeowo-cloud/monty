@@ -25,13 +25,14 @@ int pop_error(unsigned int line_number)
 }
 
 /**
- * swap_error - print error message when stack cannot be swapped
+ * short_stack_error - print error message when stack cannot be swapped
  * @line_number: line in monty byte fle where error occured.
+ * @op: String representing the operation failure.
  *
  * Return: EXIT_FAILURE
  */
-int swap_error(unsigned int line_number)
+int short_stack_error(unsigned int line_number, char *op)
 {
-	fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+	fprintf(stderr, "L%u: can't %s, stack too short\n", line_number, op);
 	return (EXIT_FAILURE);
 }
