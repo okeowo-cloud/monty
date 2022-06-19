@@ -15,7 +15,7 @@ void monty_rotr(stack_t **stack, unsigned int line_number)
 		return;
 	top = (*stack)->next;
 	bottom = (*stack)->next;
-	while (botom->next != NULL)
+	while (bottom->next != NULL)
 		bottom = bottom->next;
 
 	bottom->prev->next = NULL;
