@@ -89,3 +89,31 @@ void monty_pstr(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 	printf("\n");
 }
+
+/**
+ * monty_rotl - function rotates the stack to the top.
+ * @stack: A pointer to the top mode of element of a stack_t list
+ * @line_number: The current working line of a monty byte file
+ *
+ * Return: Always void
+ */
+void monty_rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *top, *bottom;
+
+	if ((*stack)->next == NULL || (*stack)->next == NULL)
+		return;
+
+	top = (*stack)->next;
+	bottom = (*stack)->next;
+	while (bottom->next != NULL)
+		bottom = bottom->next;
+
+	top->next->prev = *stack;
+	(*stack)->next = top->next;
+	bottom->next = top;
+	top->next = NULL;
+	top->prev = bottom;
+
+	(void)line_number;
+}
